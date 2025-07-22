@@ -1,6 +1,25 @@
 @use "variables" as *;
+@use "header";
 
-body {
-  background-color: $color-bg;
-  color: $color-text;
+.layout {
+	@apply max-w-screen-sm relative;
+	background-color: $color-bg;
+	color: $color-text;
 }
+
+.main {
+	@apply p-4;
+}
+
+.language-toggle {
+  @apply w-11 h-11 absolute right-0 font-semibold rounded-full drop-shadow object-contain transition-all duration-200;
+  background-color: $color-accent;
+  color: $color-bg;
+  border: 3px solid transparent;
+
+  	&:hover {
+    	background-color: $color-accent-hover;
+		color: $color-accent;
+		border-color: $color-accent;
+  	}
+  }
