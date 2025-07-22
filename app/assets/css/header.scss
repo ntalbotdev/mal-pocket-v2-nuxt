@@ -1,0 +1,46 @@
+@use "./variables" as *;
+
+.header {
+	@apply flex flex-col items-center relative;
+}
+
+.header__title {
+	@apply flex text-2xl font-bold my-6 gap-2 items-center;
+	background-color: $color-bg;
+
+	&--large {
+		@apply text-4xl;
+	}
+
+	&--small {
+		@apply text-sm;
+	}
+}
+
+.header__nav {
+	@apply w-full;
+	background-color: $color-accent;
+}
+
+.header__nav-list {
+	@apply flex justify-around items-center p-0;
+}
+
+.header__nav-item {
+	@apply list-none w-full;
+}
+
+.header__nav-link {
+	@apply flex h-14 items-center justify-center font-semibold transition-colors duration-200;
+	color: $color-bg;
+
+	&:hover,
+	&--active {
+		background-color: $color-accent-hover;
+		color: $color-text;
+	}
+
+	&--active {
+		@apply font-bold;
+	}
+}
