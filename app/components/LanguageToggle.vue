@@ -1,12 +1,3 @@
-<template>
-  <button 
-    class="language-toggle"
-    @click="toggleLanguage"
-  >
-    {{ showJapanese ? 'EN' : 'JP' }}
-  </button>
-</template>
-
 <script setup lang="ts">
 interface LanguageToggleProps {
   modelValue: boolean;
@@ -25,3 +16,12 @@ const toggleLanguage = () => {
   emit('update:modelValue', !props.modelValue);
 };
 </script>
+
+<template>
+  <button 
+    class="language-toggle"
+    @click="toggleLanguage"
+  >
+    {{ showJapanese ? 'EN' : 'JP' }}
+  </button>
+</template>

@@ -1,3 +1,10 @@
+<script setup lang="ts">
+const showJapanese = ref(false);
+
+// Provide the language state to child components
+provide('showJapanese', showJapanese);
+</script>
+
 <template>
 	<div class="layout">
 		<AppHeader 
@@ -9,10 +16,3 @@
 		</main>
 	</div>
 </template>
-
-<script setup lang="ts">
-const showJapanese = ref(false);
-
-// Provide the language state to child components
-provide('showJapanese', showJapanese);
-</script>
