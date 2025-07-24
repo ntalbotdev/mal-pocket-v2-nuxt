@@ -25,10 +25,14 @@ const updateLanguage = (value: boolean) => {
 
 <template>
 	<header class="header">
-		<h1 class="header__title">
-			<span class="header__title--large">MAL</span>
-			<span class="header__title--small">Pocket</span>
-		</h1>
+		<div class="header__inner">
+			<h1 class="header__title">
+				<span class="header__title--large">MAL</span>
+				<span class="header__title--small">Pocket</span>
+			</h1>
+			
+			<LanguageToggle :model-value="props.showJapanese" @update:model-value="updateLanguage" />
+		</div>
 
 		<nav class="header__nav">
 			<ul class="header__nav-list">
@@ -46,8 +50,6 @@ const updateLanguage = (value: boolean) => {
 				</li>
 			</ul>
 		</nav>
-
-		<LanguageToggle :model-value="props.showJapanese" @update:model-value="updateLanguage" />
 	</header>
 </template>
 

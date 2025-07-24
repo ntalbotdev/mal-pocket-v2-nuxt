@@ -1,15 +1,21 @@
-@use "./variables" as *;
+@use "variables" as *;
 
 .header {
-	@apply flex flex-col items-center relative;
+	@apply flex flex-col items-center;
+}
+
+.header__inner {
+	@apply flex items-center justify-end w-full px-4 py-6 relative;
+	background-color: $color-bg;
 }
 
 .header__title {
-	@apply flex text-2xl font-bold my-6 gap-2 items-center;
+	@apply flex text-2xl font-bold my-6 gap-2 items-center absolute left-0 w-full justify-center;
 	background-color: $color-bg;
 
 	&--large {
 		@apply text-4xl;
+		color: $color-accent;
 	}
 
 	&--small {
