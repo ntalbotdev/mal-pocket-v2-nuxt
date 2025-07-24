@@ -19,7 +19,7 @@ export async function fetchTodaySchedule() {
   }
 
   try {
-    const res = await fetch(`${api}/schedules?kids=false&filter=${today.name()}`);
+    const res = await fetch(`${api}/schedules?kids=false&filter=${today.name()}&sfw=true`);
     if (!res.ok) throw new Error('Failed to fetch today\'s schedule');
     return res.json();
   } catch (error) {
@@ -28,9 +28,9 @@ export async function fetchTodaySchedule() {
   }
 }
 
-export async function fetchTopAiring() {
+export async function fetchTopAiring(page: number = 1) {
   try {
-    const res = await fetch(`${api}/top/anime?filter=airing&limit=24`);
+    const res = await fetch(`${api}/top/anime?filter=airing&sfw=true&page=${page}`);
     if (!res.ok) throw new Error('Failed to fetch top airing anime');
     return res.json();
   } catch (error) {
@@ -39,9 +39,9 @@ export async function fetchTopAiring() {
   }
 }
 
-export async function fetchSeasonalAnime() {
+export async function fetchSeasonalAnime(page: number = 1) {
   try {
-    const res = await fetch(`${api}/seasons/now?limit=24`);
+    const res = await fetch(`${api}/seasons/now?sfw=true&page=${page}`);
     if (!res.ok) throw new Error('Failed to fetch seasonal anime');
     return res.json();
   } catch (error) {
@@ -50,9 +50,9 @@ export async function fetchSeasonalAnime() {
   }
 }
 
-export async function fetchUpcomingAnime() {
+export async function fetchUpcomingAnime(page: number = 1) {
   try {
-    const res = await fetch(`${api}/seasons/upcoming?limit=24`);
+    const res = await fetch(`${api}/seasons/upcoming?sfw=true&page=${page}`);
     if (!res.ok) throw new Error('Failed to fetch upcoming anime');
     return res.json();
   } catch (error) {

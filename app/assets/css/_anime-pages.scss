@@ -1,0 +1,14 @@
+@use "variables" as *;
+
+.anime_page {
+  background-color: $color-bg;
+
+  &__error {
+	@apply text-center my-4 text-lg;
+	color: $color-text;
+  }
+
+  &__grid {
+	@apply grid grid-cols-4 gap-3;
+  }
+}
